@@ -23,9 +23,13 @@ jobs:
           pip install -r requirements.txt
           pip install pytest  # Ensure pytest is installed
 
+      - name: Verify pytest installation
+        run: |
+          python -m pytest --version  # Verify that pytest is installed
+
       - name: Run tests
         run: |
-          python -m pytest  # Use python -m to ensure pytest runs
+          python -m pytest tests  # Specify the directory containing tests
 
   deploy:
     runs-on: ubuntu-latest
