@@ -36,6 +36,16 @@ jobs:
           which python
           python -m site
 
+      - name: Ensure pytest is in PATH
+        run: |
+          echo $PATH
+          python -c "import os; print(os.environ['PATH'])"
+
+      - name: Run a simple test
+        run: |
+          echo "def test_simple(): assert 1 + 1 == 2" > test_simple.py
+          python -m pytest test_simple.py
+
       - name: Run tests
         run: |
           python -m pytest tests  # Use python -m to ensure pytest runs
