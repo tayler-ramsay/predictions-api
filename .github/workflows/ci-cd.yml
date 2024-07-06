@@ -27,9 +27,18 @@ jobs:
         run: |
           python -m pytest --version  # Verify that pytest is installed
 
+      - name: List installed packages
+        run: |
+          pip list  # List all installed packages for debugging
+
+      - name: Check Python path
+        run: |
+          which python
+          python -m site
+
       - name: Run tests
         run: |
-          python -m pytest tests  # Specify the directory containing tests
+          python -m pytest tests  # Use python -m to ensure pytest runs
 
   deploy:
     runs-on: ubuntu-latest
