@@ -1,0 +1,9 @@
+pandas
+numpy
+scikit-learn
+yfinance
+tensorflow==2.16.2
+keras
+fastapi
+uvicorn
+joblib
